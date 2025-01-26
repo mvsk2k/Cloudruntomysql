@@ -27,6 +27,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = (
 """
 #os.environ.get('DB_HOST', 'your-public-ip')
 DB_HOST = '34.68.151.103'
+#DB_HOST = '10.82.0.3'
 app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}"
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -57,7 +58,6 @@ def get_employee(emp_id):
         return jsonify({'id': employee.id, 'name': employee.name, 'department': employee.department, 'salary': employee.salary})
     return jsonify({'error': 'Employee not found'}), 404
 
-"""
 
 # Route to add a new employee (CREATE)
 @app.route('/employee', methods=['POST'])
@@ -90,7 +90,7 @@ def delete_employee(emp_id):
         db.session.commit()
         return jsonify({'message': 'Employee deleted successfully!'}), 200
     return jsonify({'error': 'Employee not found'}), 404
-"""
+
 
 # Run the app
 if __name__ == '__main__':
