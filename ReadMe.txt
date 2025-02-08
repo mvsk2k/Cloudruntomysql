@@ -14,4 +14,10 @@ Body (raw JSON):
 
 #DELETE https://cloudruntomysql-65075094468.us-central1.run.app/employee/8
 
+#pip install flask flask-sqlalchemy pymysql
+
+#Enable Cloud SQL Admin API
+#gcloud services enable sqladmin.googleapis.com
+
+
 
